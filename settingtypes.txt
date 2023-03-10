@@ -1,0 +1,10 @@
+# If enabled, adds various types of real crystals that can form in vuga and geodes.
+# Quartz, Amethyst, Selenite, Celestine, Jasper, Chrysoprase, Onyx, Citrine, Aragonite, Rhodochrosite, Pyrite
+wc_crystals.real_crystals (Real Crystals) bool true
+
+# If enabled, adds all of the birthstones that aren't included within Real Crystals. 
+# Ruby, Sapphire, Emerald, Topaz, Garnet, Aquamarine, Peridot, Tourmaline, Alexandrite, Diamond
+# Disabled by default.
+wc_crystals.birthstones (Birthstones) bool false
+
+
