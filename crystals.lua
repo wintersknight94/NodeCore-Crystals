@@ -85,7 +85,7 @@ local function register_crystal(id, desc, mohs, color)
 		items = {
 			{name = modname .. ":" ..id.. "_crystal", count = 4, scatter = 5}
 		},
-		toolgroups = {cracky = 2},
+		toolgroups = {cracky = mohs},
 		itemscatter = 5
 	})
 end
@@ -94,35 +94,38 @@ register_crystal("lodite",		"Lodite",			3,	"#592720:180")		--CAPUT MORTUUM
 register_crystal("luxite",		"Luxite",			3,	"#fcf75e:160")		--ICTERINE
 ------------------------------------------------------------------------
 if minetest.get_modpath("wc_adamant") then
-	register_crystal("adamant",		"Adamantite",		4,	"#40e0d0:120")		--TURQUOISE
-	register_crystal("adamant_lux",	"Adamantite",		4,	"#3cb371:140")		--SEA GREEN
+	register_crystal("adamant",		"Pure Adamantine",	6,	"#40e0d0:120")		--TURQUOISE
 end
 ------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".real_crystals", true) then
-	register_crystal("quartz",		"Quartz",			2,	"#f4f0ec:180")		--ISABELLINE
-	register_crystal("amethyst",		"Amethyst",		2,	"#4b0082:180")		--INDIGO
-	register_crystal("selenite",		"Selenite",		1,	"#ffffff:64")		--WHITE
+	register_crystal("quartz",		"Quartz",			4,	"#f4f0ec:180")		--ISABELLINE
+	register_crystal("amethyst",		"Amethyst",		4,	"#4b0082:180")		--INDIGO
+	register_crystal("selenite",		"Selenite",		2,	"#ffffff:64")		--WHITE
 	register_crystal("celestine",		"Celestine",		2,	"#00bfff:120")		--DEEP SKY BLUE
-	register_crystal("jasper",		"Jasper",			2,	"#9b111e:140")		--RUBY RED
-	register_crystal("chrysoprase",	"Chrysoprase",		2,	"#3cb371:140")		--SEA GREEN
-	register_crystal("onyx",			"Onyx",			2,	"#353839:180")		--ONYX
-	register_crystal("citrine",		"Citrine",		2,	"#dfff00:140")		--CHARTREUSE
-	register_crystal("aragonite",		"Aragonite",		2,	"#e48400:140")		--FULVOUS
-	register_crystal("rhodochrosite",	"Rhodochrosite",	2,	"#fba0e3:160")		--LAVENDER ROSE
-	register_crystal("pyrite",		"Pyrite",			2,	"#b5a642:180")		--BRASS
+	register_crystal("jasper",		"Jasper",			4,	"#9b111e:140")		--RUBY RED
+	register_crystal("chrysoprase",	"Chrysoprase",		4,	"#3cb371:140")		--SEA GREEN
+	register_crystal("onyx",			"Onyx",			4,	"#353839:180")		--ONYX
+	register_crystal("citrine",		"Citrine",		4,	"#dfff00:140")		--CHARTREUSE
+	register_crystal("aragonite",		"Aragonite",		3,	"#e48400:140")		--FULVOUS
+	register_crystal("rhodochrosite",	"Rhodochrosite",	3,	"#fba0e3:160")		--LAVENDER ROSE
+	register_crystal("pyrite",		"Pyrite",			3,	"#b5a642:180")		--BRASS
 end
 ------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".birthstones", true) then
-	register_crystal("ruby",			"Ruby",			2,	"#9b111e:160")		--RUBY RED
-	register_crystal("sapphire",		"Sapphire",		2,	"#0f52ba:160")		--SAPPHIRE
-	register_crystal("emerald",		"Emerald",		2,	"#007f66:160")		--VIRIDIAN
-	register_crystal("topaz",		"Topaz",			2,	"#e48400:160")		--FULVOUS
-	register_crystal("garnet",		"Garnet",			2,	"#960018:160")		--CARMINE
-	register_crystal("aquamarine",	"Aquamarine",		2,	"#7fffd4:160")		--AQUAMARINE
-	register_crystal("peridot",		"Peridot",		2,	"#40e0d0:160")		--TURQUOISE
-	register_crystal("tourmaline",	"Tourmaline",		2,	"#bd33a4:160")		--BYZANTINE
-	register_crystal("alexandrite",	"Alexandrite",		2,	"#120a8f:160")		--ULTRAMARINE
-	register_crystal("diamond",		"Diamond",		5,	"#ffffff:0")		--WHITE
+	register_crystal("ruby",			"Ruby",			5,	"#9b111e:160")		--RUBY RED
+	register_crystal("sapphire",		"Sapphire",		5,	"#0f52ba:160")		--SAPPHIRE
+	register_crystal("emerald",		"Emerald",		4,	"#007f66:160")		--VIRIDIAN
+	register_crystal("topaz",		"Topaz",			4,	"#e48400:160")		--FULVOUS
+	register_crystal("garnet",		"Garnet",			4,	"#960018:160")		--CARMINE
+	register_crystal("aquamarine",	"Aquamarine",		4,	"#7fffd4:160")		--AQUAMARINE
+	register_crystal("peridot",		"Peridot",		4,	"#40e0d0:160")		--TURQUOISE
+	register_crystal("tourmaline",	"Tourmaline",		4,	"#bd33a4:160")		--BYZANTINE
+	register_crystal("alexandrite",	"Alexandrite",		5,	"#120a8f:160")		--ULTRAMARINE
+	register_crystal("diamond",		"Diamond",		6,	"#ffffff:0")		--WHITE
+end
+------------------------------------------------------------------------
+if minetest.get_modpath("wc_gloom") then
+	register_crystal("shroomite",		"Shroomite",		7,	"#00a86b:180")		--JADE
 end
 -- ================================================================== --
 nodecore.register_craft({
@@ -134,7 +137,7 @@ nodecore.register_craft({
 				replace = "nc_terrain:sand"
 			}
 		},
-		toolgroups = {thumpy = 3}
+		toolgroups = {thumpy = 5}
 	})
 -- ================================================================== --
 

@@ -7,4 +7,6 @@ wc_crystals.real_crystals (Real Crystals) bool true
 # Disabled by default.
 wc_crystals.birthstones (Birthstones) bool false
 
+# If enabled, adds crystal-tipped tools.
+wc_crystals.crystal_tools (Crystal Tools) bool true
 

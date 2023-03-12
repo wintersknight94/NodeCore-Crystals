@@ -4,33 +4,32 @@ local minetest, nodecore
 -- LUALOCALS > ---------------------------------------------------------
 local modname = minetest.get_current_modname()
 -- ================================================================== --
-minetest.override_item(modname.. ":luxite",{
+minetest.override_item(modname.. ":adamant",{
 	groups = {
-		cracky = 2,
+		cracky = 5,
 		crystal = 1,
-		lux_emit = 1
+		lux_absorb = 10
 	},
-	light_source = 3, glow = 1,
-	drop_in_place = {name = "nc_lux:flux_source"}
+	light_source = 1, glow = 1
 })
 ------------------------------------------------------------------------
-minetest.override_item(modname.. ":luxite_crystal",{
+minetest.override_item(modname.. ":adamant_crystal",{
 	groups = {
 		snappy = 1,
 		attached_node = 1,
 		crystal = 1,
-		lux_emit = 1
+		lux_absorb = 10
 	},
-	light_source = 3, glow = 1
+	light_source = 1, glow = 1
 })
 ------------------------------------------------------------------------
-minetest.override_item(modname.. ":luxite_lattice",{
+minetest.override_item(modname.. ":adamant_lattice",{
 	groups = {
-		cracky = 2,
+		cracky = 5,
 		crystal = 1,
-		lux_emit = 1
+		lux_absorb = 10
 	},
-	light_source = 3, glow = 1
+	light_source = 1, glow = 1
 })
 -- ================================================================== --
 

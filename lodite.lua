@@ -4,21 +4,6 @@ local minetest, nodecore
 -- LUALOCALS > ---------------------------------------------------------
 local modname = minetest.get_current_modname()
 -- ================================================================== --
-minetest.override_item(modname.. ":lodite",{
-	groups = {
-		cracky = 2,
-		crystal = 1
-	},
-})
-------------------------------------------------------------------------
-minetest.override_item(modname.. ":lodite_crystal",{
-	groups = {
-		snappy = 1,
-		attached_node = 1,
-		crystal = 1
-	},
-})
--- ================================================================== --
 nodecore.register_craft({
 	label = "smelt lodite shards",
 	action = "pummel",
