@@ -112,16 +112,16 @@ if minetest.settings:get_bool(modname .. ".real_crystals", true) then
 end
 ------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".birthstones", true) then
-	register_crystal("ruby",			"Ruby",			5,	"#9b111e:160")		--RUBY RED
-	register_crystal("sapphire",		"Sapphire",		5,	"#0f52ba:160")		--SAPPHIRE
-	register_crystal("emerald",		"Emerald",		4,	"#007f66:160")		--VIRIDIAN
-	register_crystal("topaz",		"Topaz",			4,	"#e48400:160")		--FULVOUS
-	register_crystal("garnet",		"Garnet",			4,	"#960018:160")		--CARMINE
-	register_crystal("aquamarine",	"Aquamarine",		4,	"#7fffd4:160")		--AQUAMARINE
-	register_crystal("peridot",		"Peridot",		4,	"#40e0d0:160")		--TURQUOISE
-	register_crystal("tourmaline",	"Tourmaline",		4,	"#bd33a4:160")		--BYZANTINE
-	register_crystal("alexandrite",	"Alexandrite",		5,	"#120a8f:160")		--ULTRAMARINE
-	register_crystal("diamond",		"Diamond",		6,	"#ffffff:0")		--WHITE
+	register_crystal("ruby",			"Ruby",				5,	"#9b111e:160")		--RUBY RED
+	register_crystal("sapphire",		"Sapphire",			5,	"#0f52ba:160")		--SAPPHIRE
+	register_crystal("emerald",			"Emerald",			4,	"#007f66:160")		--VIRIDIAN
+	register_crystal("topaz",			"Topaz",			4,	"#e48400:160")		--FULVOUS
+	register_crystal("garnet",			"Garnet",			4,	"#960018:160")		--CARMINE
+	register_crystal("aquamarine",		"Aquamarine",		4,	"#7fffd4:160")		--AQUAMARINE
+	register_crystal("peridot",			"Peridot",			4,	"#40e0d0:160")		--TURQUOISE
+	register_crystal("tourmaline",		"Tourmaline",		4,	"#bd33a4:160")		--BYZANTINE
+	register_crystal("alexandrite",		"Alexandrite",		5,	"#120a8f:160")		--ULTRAMARINE
+	register_crystal("diamond",			"Diamond",			6,	"#ffffff:0")		--WHITE
 end
 ------------------------------------------------------------------------
 if minetest.get_modpath("wc_gloom") then

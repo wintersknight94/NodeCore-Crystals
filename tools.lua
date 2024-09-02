@@ -170,6 +170,10 @@ if minetest.get_modpath("wc_adamant") then
 	tool_crystal("adamant",		"Pure Adamantine",	9,	"#40e0d0:120")		--TURQUOISE
 end
 ------------------------------------------------------------------------
+if minetest.get_modpath("wc_gloom") then
+	tool_crystal("shroomite",		"Shroomite",		7,	"#00a86b:180")		--JADE
+end
+------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".real_crystals", true) then
 	tool_crystal("quartz",		"Quartz",			4,	"#f4f0ec:180")		--ISABELLINE
 	tool_crystal("amethyst",		"Amethyst",		4,	"#4b0082:180")		--INDIGO
