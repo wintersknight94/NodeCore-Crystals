@@ -77,7 +77,19 @@ local function register_crystal(id, desc, mohs, color)
 --		light_source = 10 --for testing purposes
 	})
 ------------------------------------------------------------------------
-nodecore.register_craft({
+	nodecore.register_craft({
+		label = "break crystal to shards",
+		action = "pummel",
+		toolgroups = {cracky = mohs},
+		nodes = {
+			{match = modname.. ":" ..id, replace = "air"}
+		},
+		items = {
+			{name = modname .. ":" ..id.. "_crystal", count = 4, scatter = 5}
+		},
+	})
+	
+	nodecore.register_craft({
 		label = "hammer prism from crystal",
 		action = "pummel",
 		toolgroups = {thumpy = mohs},
@@ -89,9 +101,10 @@ nodecore.register_craft({
 		}
 	})
 
-nodecore.register_craft({
+	nodecore.register_craft({
 		label = "cleave lenses from crystal",
 		action = "pummel",
+		priority = 1,
 		toolgroups = {choppy = mohs},
 		nodes = {
 			{
@@ -110,21 +123,21 @@ register_crystal("lodite",		"Lodite",			3,	"#592720:180")		--CAPUT MORTUUM
 register_crystal("luxite",		"Luxite",			3,	"#fcf75e:160")		--ICTERINE
 ------------------------------------------------------------------------
 if minetest.get_modpath("wc_adamant") then
-	register_crystal("adamant",		"Pure Adamantine",	6,	"#40e0d0:120")		--TURQUOISE
+	register_crystal("adamant",		"Pure Adamantine",	8,	"#40e0d0:120")		--TURQUOISE
 end
 ------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".real_crystals", true) then
-	register_crystal("quartz",		"Quartz",			4,	"#f4f0ec:180")		--ISABELLINE
+	register_crystal("quartz",			"Quartz",			4,	"#f4f0ec:180")		--ISABELLINE
 	register_crystal("amethyst",		"Amethyst",		4,	"#4b0082:180")		--INDIGO
 	register_crystal("selenite",		"Selenite",		2,	"#ffffff:64")		--WHITE
 	register_crystal("celestine",		"Celestine",		2,	"#00bfff:120")		--DEEP SKY BLUE
-	register_crystal("jasper",		"Jasper",			4,	"#9b111e:140")		--RUBY RED
-	register_crystal("chrysoprase",	"Chrysoprase",		4,	"#3cb371:140")		--SEA GREEN
+	register_crystal("jasper",			"Jasper",			4,	"#9b111e:140")		--RUBY RED
+	register_crystal("chrysoprase",		"Chrysoprase",		4,	"#3cb371:140")		--SEA GREEN
 	register_crystal("onyx",			"Onyx",			4,	"#353839:180")		--ONYX
-	register_crystal("citrine",		"Citrine",		4,	"#dfff00:140")		--CHARTREUSE
+	register_crystal("citrine",			"Citrine",		4,	"#dfff00:140")		--CHARTREUSE
 	register_crystal("aragonite",		"Aragonite",		3,	"#e48400:140")		--FULVOUS
 	register_crystal("rhodochrosite",	"Rhodochrosite",	3,	"#fba0e3:160")		--LAVENDER ROSE
-	register_crystal("pyrite",		"Pyrite",			3,	"#b5a642:180")		--BRASS
+	register_crystal("pyrite",			"Pyrite",			3,	"#b5a642:180")		--BRASS
 end
 ------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".birthstones", true) then

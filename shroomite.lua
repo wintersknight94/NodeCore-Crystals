@@ -10,11 +10,6 @@ local modname = minetest.get_current_modname()
 
 minetest.override_item(modname.. ":shroomite",{
 	tiles = {mineral},
-	groups = {
-		cracky = 7,
-		crystal = 1,
-		lux_emit = 1
-	},
 	light_source = 12, glow = 1,
 	drop_in_place = {name = "nc_lux:flux_source"}
 })
@@ -22,22 +17,11 @@ minetest.override_item(modname.. ":shroomite",{
 minetest.override_item(modname.. ":shroomite_crystal",{
 	tiles = {mineral.. "^[mask:" ..modname.. "_mask.png"},
 	inventory_image = mineral.. "^[mask:" ..modname.. "_mask.png",
-	groups = {
-		snappy = 1,
-		attached_node = 1,
-		crystal = 1,
-		lux_emit = 1
-	},
 	light_source = 12, glow = 1
 })
 ------------------------------------------------------------------------
 minetest.override_item(modname.. ":shroomite_lattice",{
 	tiles = {mineral},
-	groups = {
-		cracky = 7,
-		crystal = 1,
-		lux_emit = 1
-	},
 	light_source = 12, glow = 1
 })
 -- ================================================================== --

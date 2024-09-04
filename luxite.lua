@@ -6,8 +6,9 @@ local modname = minetest.get_current_modname()
 -- ================================================================== --
 minetest.override_item(modname.. ":luxite",{
 	groups = {
-		cracky = 2,
+		cracky = 3,
 		crystal = 1,
+		crystal_node = 1,
 		lux_emit = 1
 	},
 	light_source = 3, glow = 1,
@@ -26,7 +27,7 @@ minetest.override_item(modname.. ":luxite_crystal",{
 ------------------------------------------------------------------------
 minetest.override_item(modname.. ":luxite_lattice",{
 	groups = {
-		cracky = 2,
+		cracky = 3,
 		crystal = 1,
 		lux_emit = 1
 	},

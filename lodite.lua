@@ -23,4 +23,3 @@ nodecore.register_craft({
 		"nc_lode:bar_hot"
 	}
 })
-
