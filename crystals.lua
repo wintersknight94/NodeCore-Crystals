@@ -24,6 +24,7 @@ local function register_crystal(id, desc, mohs, color)
 		groups = {
 			cracky = mohs,
 			crystal = 1,
+			crystal_node = 1,
 			lux_absorb = 20,
 		},
 		sounds = nodecore.sounds("nc_optics_glassy"),
@@ -76,18 +77,33 @@ local function register_crystal(id, desc, mohs, color)
 --		light_source = 10 --for testing purposes
 	})
 ------------------------------------------------------------------------
-	nodecore.register_craft({
-		label = "break crystal to shards",
+nodecore.register_craft({
+		label = "hammer prism from crystal",
 		action = "pummel",
+		toolgroups = {thumpy = mohs},
 		nodes = {
-			{match = modname.. ":" ..id, replace = "air"}
+			{
+				match = {groups = {crystal_node = true}},
+				replace = "nc_optics:prism"
+			}
+		}
+	})
+
+nodecore.register_craft({
+		label = "cleave lenses from crystal",
+		action = "pummel",
+		toolgroups = {choppy = mohs},
+		nodes = {
+			{
+				match = {groups = {crystal_node = true}},
+				replace = "air"
+			}
 		},
 		items = {
-			{name = modname .. ":" ..id.. "_crystal", count = 4, scatter = 5}
-		},
-		toolgroups = {cracky = mohs},
-		itemscatter = 5
+			{name = "nc_optics:lens", count = 2, scatter = 5}
+		}
 	})
+------------------------------------------------------------------------
 end
 -- ================================================================== --
 register_crystal("lodite",		"Lodite",			3,	"#592720:180")		--CAPUT MORTUUM
@@ -127,17 +143,5 @@ end
 if minetest.get_modpath("wc_gloom") then
 	register_crystal("shroomite",		"Shroomite",		7,	"#00a86b:180")		--JADE
 end
--- ================================================================== --
-nodecore.register_craft({
-		label = "pulverize crystals to sand",
-		action = "pummel",
-		nodes = {
-			{
-				match = {groups = {crystal = true}},
-				replace = "nc_terrain:sand"
-			}
-		},
-		toolgroups = {thumpy = 5}
-	})
 -- ================================================================== --
 
