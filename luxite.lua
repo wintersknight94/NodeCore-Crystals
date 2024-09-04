@@ -33,4 +33,18 @@ minetest.override_item(modname.. ":luxite_lattice",{
 	light_source = 3, glow = 1
 })
 -- ================================================================== --
+local function luxite_tools(item)
+	minetest.override_item(item,{
+		groups = {lux_emit = 1},
+		light_source = 6, glow = 1
+	})
+end
+------------------------------------------------------------------------
+luxite_tools(modname.. ":tool_pick_luxite")
+luxite_tools(modname.. ":tool_spade_luxite")
+luxite_tools(modname.. ":tool_hatchet_luxite")
+luxite_tools(modname.. ":tool_mallet_luxite")
+luxite_tools(modname.. ":adze_luxite")
+luxite_tools(modname.. ":mace_luxite")
+-- ================================================================== --
 

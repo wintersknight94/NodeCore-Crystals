@@ -9,14 +9,14 @@ include("crystals")
 
 --<>--
 
-include("luxite")
-include("lodite")
-
---<>--
-
 if minetest.settings:get_bool(modname .. ".crystal_tools", true) then
 	include("tools")
 end
+
+--<>--
+
+include("luxite")
+include("lodite")
 
 --<>--
 
