@@ -27,3 +27,5 @@ end
 if minetest.get_modpath("wc_gloom") then
 	include("shroomite")
 end
+
+include("geode")

@@ -22,14 +22,5 @@ minetest.override_item(modname.. ":adamant_crystal",{
 	},
 	light_source = 1, glow = 1
 })
-------------------------------------------------------------------------
-minetest.override_item(modname.. ":adamant_lattice",{
-	groups = {
-		cracky = 5,
-		crystal = 1,
-		lux_absorb = 10
-	},
-	light_source = 1, glow = 1
-})
 -- ================================================================== --
 

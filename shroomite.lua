@@ -20,15 +20,11 @@ minetest.override_item(modname.. ":shroomite_crystal",{
 	light_source = 12, glow = 1
 })
 ------------------------------------------------------------------------
-minetest.override_item(modname.. ":shroomite_lattice",{
-	tiles = {mineral},
-	light_source = 12, glow = 1
-})
+
 -- ================================================================== --
 
 local function shroomite_tools(item)
 	minetest.override_item(item,{
-		groups = {lux_emit = 1},
 		light_source = 6, glow = 1
 	})
 end

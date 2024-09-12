@@ -4,8 +4,10 @@ wc_crystals.real_crystals (Real Crystals) bool true
 
 # If enabled, adds all of the birthstones that aren't included within Real Crystals. 
 # Ruby, Sapphire, Emerald, Topaz, Garnet, Aquamarine, Peridot, Tourmaline, Alexandrite, Diamond
-# Disabled by default.
-wc_crystals.birthstones (Birthstones) bool false
+wc_crystals.birthstones (Birthstones) bool true
+
+# If enabled, adds a small number of joke crystals.
+wc_crystals.jestones (Joke Crystals) bool false
 
 # If enabled, adds crystal-tipped tools.
 wc_crystals.crystal_tools (Crystal Tools) bool true

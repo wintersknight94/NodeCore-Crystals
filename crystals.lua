@@ -54,29 +54,6 @@ local function register_crystal(id, desc, mohs, color)
 --		drop_in_place = "air",
 	})
 ------------------------------------------------------------------------
-	minetest.register_node(modname.. ":" ..id.. "_lattice", {
-		description = desc.. " Lattice",
-		tiles = {mineral},
-		drawtype = "nodebox",
-		node_box = nodecore.fixedbox(
-			{-lt, -ll, -lt, lt, ll, lt},
-			{-ll, -lt, -lt, ll, lt, lt},
-			{-lt, -lt, -ll, lt, lt, ll}
-		),
-		selection_box = nodecore.fixedbox(
-			{-lf, -ll, -lf, lf, ll, lf},
-			{-ll, -lf, -lf, ll, lf, lf},
-			{-lf, -lf, -ll, lf, lf, ll}
-		),
-		paramtype = "light",
-		use_texture_alpha = "blend",
-		climbable = true,
-		sunlight_propagates = true,
-		groups = {cracky = mohs, crystal = 1, lattice = 1},
-		sounds = nodecore.sounds("nc_optics_glassy"),
---		light_source = 10 --for testing purposes
-	})
-------------------------------------------------------------------------
 	nodecore.register_craft({
 		label = "break crystal to shards",
 		action = "pummel",
@@ -122,19 +99,15 @@ end
 register_crystal("lodite",		"Lodite",			3,	"#592720:180")		--CAPUT MORTUUM
 register_crystal("luxite",		"Luxite",			3,	"#fcf75e:160")		--ICTERINE
 ------------------------------------------------------------------------
-if minetest.get_modpath("wc_adamant") then
-	register_crystal("adamant",		"Pure Adamantine",	8,	"#40e0d0:120")		--TURQUOISE
-end
-------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".real_crystals", true) then
 	register_crystal("quartz",			"Quartz",			4,	"#f4f0ec:180")		--ISABELLINE
-	register_crystal("amethyst",		"Amethyst",		4,	"#4b0082:180")		--INDIGO
-	register_crystal("selenite",		"Selenite",		2,	"#ffffff:64")		--WHITE
+	register_crystal("amethyst",		"Amethyst",			4,	"#4b0082:180")		--INDIGO
+	register_crystal("selenite",		"Selenite",			2,	"#ffffff:64")		--WHITE
 	register_crystal("celestine",		"Celestine",		2,	"#00bfff:120")		--DEEP SKY BLUE
 	register_crystal("jasper",			"Jasper",			4,	"#9b111e:140")		--RUBY RED
 	register_crystal("chrysoprase",		"Chrysoprase",		4,	"#3cb371:140")		--SEA GREEN
-	register_crystal("onyx",			"Onyx",			4,	"#353839:180")		--ONYX
-	register_crystal("citrine",			"Citrine",		4,	"#dfff00:140")		--CHARTREUSE
+	register_crystal("onyx",			"Onyx",				4,	"#353839:180")		--ONYX
+	register_crystal("citrine",			"Citrine",			4,	"#dfff00:140")		--CHARTREUSE
 	register_crystal("aragonite",		"Aragonite",		3,	"#e48400:140")		--FULVOUS
 	register_crystal("rhodochrosite",	"Rhodochrosite",	3,	"#fba0e3:160")		--LAVENDER ROSE
 	register_crystal("pyrite",			"Pyrite",			3,	"#b5a642:180")		--BRASS
@@ -151,6 +124,15 @@ if minetest.settings:get_bool(modname .. ".birthstones", true) then
 	register_crystal("tourmaline",		"Tourmaline",		4,	"#bd33a4:160")		--BYZANTINE
 	register_crystal("alexandrite",		"Alexandrite",		5,	"#120a8f:160")		--ULTRAMARINE
 	register_crystal("diamond",			"Diamond",			6,	"#ffffff:0")		--WHITE
+end
+------------------------------------------------------------------------
+if minetest.settings:get_bool(modname .. ".jestones", true) then
+	register_crystal("amnotethyst",		"Amnotethyst",		4,	"#4b0082:100")		--INDIGO
+	register_crystal("yourethyst",		"Yourethyst",		4,	"#4b0082:120")		--INDIGO
+end
+------------------------------------------------------------------------
+if minetest.get_modpath("wc_adamant") then
+	register_crystal("adamant",		"Pure Adamantine",	7,	"#40e0d0:120")		--TURQUOISE
 end
 ------------------------------------------------------------------------
 if minetest.get_modpath("wc_gloom") then

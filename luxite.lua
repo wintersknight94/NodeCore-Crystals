@@ -24,19 +24,10 @@ minetest.override_item(modname.. ":luxite_crystal",{
 	},
 	light_source = 3, glow = 1
 })
-------------------------------------------------------------------------
-minetest.override_item(modname.. ":luxite_lattice",{
-	groups = {
-		cracky = 3,
-		crystal = 1,
-		lux_emit = 1
-	},
-	light_source = 3, glow = 1
-})
 -- ================================================================== --
 local function luxite_tools(item)
 	minetest.override_item(item,{
-		groups = {lux_emit = 1},
+		groups = {lux_emit = 1, flammable = 2, crystalline = 1},
 		light_source = 6, glow = 1
 	})
 end
