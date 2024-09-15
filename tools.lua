@@ -5,7 +5,7 @@ local minetest, nodecore
 local modname = minetest.get_current_modname()
 -- ================================================================== --
 
-local function tool_crystal(id, desc, mohs, color)
+local function tool_crystal(id, desc, mohs, dura, color)
 
 local crystal = modname.. ".png^[colorize:" ..color
 
@@ -23,7 +23,7 @@ local crystal = modname.. ".png^[colorize:" ..color
 					crystalline = 1
 				},
 				tool_capabilities = nodecore.toolcaps({
-						uses = 0.5,
+						uses = dura,
 						[group] = mohs
 					}),
 				on_ignite = "wc_crystals:" ..id.. "_crystal",
@@ -56,7 +56,7 @@ local crystal = modname.. ".png^[colorize:" ..color
 			crystalline = 1,
 		},
 		tool_capabilities = nodecore.toolcaps({
-				uses = 0.5,
+				uses = dura,
 				choppy = mohs-1,
 				crumbly = mohs,
 				cracky = mohs-2,
@@ -98,7 +98,7 @@ local crystal = modname.. ".png^[colorize:" ..color
 			crystal_mace = 1
 		},
 		tool_capabilities = nodecore.toolcaps({
-				uses = 2.5,
+				uses = dura*4,
 				snappy = mohs-1,
 				choppy = mohs,
 				crumbly = mohs,
@@ -163,40 +163,40 @@ local crystal = modname.. ".png^[colorize:" ..color
 end
 -- ================================================================== --
 
-tool_crystal("lodite",				"Lodite",			5,	"#592720:180")		--CAPUT MORTUUM
-tool_crystal("luxite",				"Luxite",			4,	"#fcf75e:160")		--ICTERINE
+tool_crystal("lodite",				"Lodite",			5,	0.35,	"#592720:180")		--CAPUT MORTUUM
+tool_crystal("luxite",				"Luxite",			4,	0.2,	"#fcf75e:160")		--ICTERINE
 ------------------------------------------------------------------------
 if minetest.get_modpath("wc_adamant") then
-	tool_crystal("adamant",			"Pure Adamantine",	9,	"#40e0d0:120")		--TURQUOISE
+	tool_crystal("adamant",			"Pure Adamantine",	9,	0.75,	"#40e0d0:120")		--TURQUOISE
 end
 ------------------------------------------------------------------------
 if minetest.get_modpath("wc_gloom") then
-	tool_crystal("shroomite",		"Shroomite",		8,	"#00a86b:180")		--JADE
+	tool_crystal("shroomite",		"Shroomite",		8,	0.75,	"#00a86b:180")		--JADE
 end
 ------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".real_crystals", true) then
-	tool_crystal("quartz",			"Quartz",			4,	"#f4f0ec:180")		--ISABELLINE
-	tool_crystal("amethyst",		"Amethyst",			4,	"#4b0082:180")		--INDIGO
-	tool_crystal("selenite",		"Selenite",			4,	"#ffffff:64")		--WHITE
-	tool_crystal("celestine",		"Celestine",		4,	"#00bfff:120")		--DEEP SKY BLUE
-	tool_crystal("jasper",			"Jasper",			4,	"#9b111e:140")		--RUBY RED
-	tool_crystal("chrysoprase",		"Chrysoprase",		4,	"#3cb371:140")		--SEA GREEN
-	tool_crystal("onyx",			"Onyx",				4,	"#353839:180")		--ONYX
-	tool_crystal("citrine",			"Citrine",			4,	"#dfff00:140")		--CHARTREUSE
-	tool_crystal("aragonite",		"Aragonite",		4,	"#e48400:140")		--FULVOUS
-	tool_crystal("rhodochrosite",	"Rhodochrosite",	4,	"#fba0e3:160")		--LAVENDER ROSE
-	tool_crystal("pyrite",			"Pyrite",			4,	"#b5a642:180")		--BRASS
+	tool_crystal("quartz",			"Quartz",			4,	0.2,	"#f4f0ec:180")		--ISABELLINE
+	tool_crystal("amethyst",		"Amethyst",			4,	0.2,	"#4b0082:180")		--INDIGO
+	tool_crystal("selenite",		"Selenite",			4,	0.15,	"#ffffff:64")		--WHITE
+	tool_crystal("celestine",		"Celestine",		4,	0.15,	"#00bfff:120")		--DEEP SKY BLUE
+	tool_crystal("jasper",			"Jasper",			4,	0.2,	"#9b111e:140")		--RUBY RED
+	tool_crystal("chrysoprase",		"Chrysoprase",		4,	0.2,	"#3cb371:140")		--SEA GREEN
+	tool_crystal("onyx",			"Onyx",				4,	0.2,	"#353839:180")		--ONYX
+	tool_crystal("citrine",			"Citrine",			4,	0.2,	"#dfff00:140")		--CHARTREUSE
+	tool_crystal("aragonite",		"Aragonite",		4,	0.2,	"#e48400:140")		--FULVOUS
+	tool_crystal("rhodochrosite",	"Rhodochrosite",	4,	0.2,	"#fba0e3:160")		--LAVENDER ROSE
+	tool_crystal("pyrite",			"Pyrite",			4,	0.15,	"#b5a642:180")		--BRASS
 end
 ------------------------------------------------------------------------
 if minetest.settings:get_bool(modname .. ".birthstones", true) then
-	tool_crystal("ruby",			"Ruby",				5,	"#9b111e:160")		--RUBY RED
-	tool_crystal("sapphire",		"Sapphire",			5,	"#0f52ba:160")		--SAPPHIRE
-	tool_crystal("emerald",			"Emerald",			5,	"#007f66:160")		--VIRIDIAN
-	tool_crystal("topaz",			"Topaz",			5,	"#e48400:160")		--FULVOUS
-	tool_crystal("garnet",			"Garnet",			5,	"#960018:160")		--CARMINE
-	tool_crystal("aquamarine",		"Aquamarine",		5,	"#7fffd4:160")		--AQUAMARINE
-	tool_crystal("peridot",			"Peridot",			5,	"#40e0d0:160")		--TURQUOISE
-	tool_crystal("tourmaline",		"Tourmaline",		5,	"#bd33a4:160")		--BYZANTINE
-	tool_crystal("alexandrite",		"Alexandrite",		5,	"#120a8f:160")		--ULTRAMARINE
-	tool_crystal("diamond",			"Diamond",			5,	"#ffffff:0")		--WHITE
+	tool_crystal("ruby",			"Ruby",				5,	0.25,	"#9b111e:160")		--RUBY RED
+	tool_crystal("sapphire",		"Sapphire",			5,	0.25,	"#0f52ba:160")		--SAPPHIRE
+	tool_crystal("emerald",			"Emerald",			5,	0.25,	"#007f66:160")		--VIRIDIAN
+	tool_crystal("topaz",			"Topaz",			5,	0.25,	"#e48400:160")		--FULVOUS
+	tool_crystal("garnet",			"Garnet",			5,	0.35,	"#960018:160")		--CARMINE
+	tool_crystal("aquamarine",		"Aquamarine",		5,	0.25,	"#7fffd4:160")		--AQUAMARINE
+	tool_crystal("peridot",			"Peridot",			5,	0.25,	"#40e0d0:160")		--TURQUOISE
+	tool_crystal("tourmaline",		"Tourmaline",		5,	0.25,	"#bd33a4:160")		--BYZANTINE
+	tool_crystal("alexandrite",		"Alexandrite",		5,	0.35,	"#120a8f:160")		--ULTRAMARINE
+	tool_crystal("diamond",			"Diamond",			5,	0.5,	"#ffffff:0")		--WHITE
 end
