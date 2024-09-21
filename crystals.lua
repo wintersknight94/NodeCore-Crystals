@@ -129,6 +129,8 @@ end
 if minetest.settings:get_bool(modname .. ".jestones", true) then
 	register_crystal("amnotethyst",		"Amnotethyst",		4,	"#4b0082:100")		--INDIGO
 	register_crystal("yourethyst",		"Yourethyst",		4,	"#4b0082:120")		--INDIGO
+	register_crystal("buryem",			"Buryem",			4,	"#353839:120")		--ONYX
+	register_crystal("hermiturine",		"Hermiturine",		4,	"#007f66:100")		--VIRIDIAN
 end
 ------------------------------------------------------------------------
 if minetest.get_modpath("wc_adamant") then

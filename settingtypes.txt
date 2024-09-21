@@ -7,6 +7,7 @@ wc_crystals.real_crystals (Real Crystals) bool true
 wc_crystals.birthstones (Birthstones) bool true
 
 # If enabled, adds a small number of joke crystals.
+# Amnotethyst, Yourethyst, Buryem, Hermiturine
 wc_crystals.jestones (Joke Crystals) bool false
 
 # If enabled, adds crystal-tipped tools.
