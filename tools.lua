@@ -3,6 +3,7 @@ local minetest, nodecore
     = minetest, nodecore
 -- LUALOCALS > ---------------------------------------------------------
 local modname = minetest.get_current_modname()
+local lib_res_mask = "wc_lib_resources_mask"
 -- ================================================================== --
 
 local function tool_crystal(id, desc, mohs, dura, color)
@@ -16,7 +17,7 @@ local crystal = modname.. ".png^[colorize:" ..color
 		minetest.register_tool(tool, {
 				description = desc.. "-Tipped " .. name,
 				inventory_image = "nc_woodwork_tool_" .. name:lower() .. ".png^(" ..crystal.. "^[mask:"
-				.. modname .. "_tip_" .. name:lower() .. ".png)",
+				.. lib_res_mask .. "_tip_" .. name:lower() .. ".png)",
 				tool_wears_to = wood,
 				groups = {
 					flammable = 2,
@@ -50,7 +51,7 @@ local crystal = modname.. ".png^[colorize:" ..color
 	local adzedef
 	adzedef = {
 		description = desc.. "-Tipped Adze",
-		inventory_image = "nc_woodwork_adze.png^(" ..crystal.. "^[mask:" .. modname .. "_tip_adze.png)",
+		inventory_image = "nc_woodwork_adze.png^(" ..crystal.. "^[mask:" .. lib_res_mask .. "_tip_adze.png)",
 		groups = {
 			flammable = 2,
 			crystalline = 1,
