@@ -6,7 +6,7 @@ local modname = minetest.get_current_modname()
 -- ================================================================== --
 minetest.override_item(modname.. ":adamant",{
 	groups = {
-		cracky = 5,
+		cracky = 7,
 		crystal = 1,
 		lux_absorb = 10
 	},
