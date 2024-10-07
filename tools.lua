@@ -60,7 +60,7 @@ local crystal = modname.. ".png^[colorize:" ..color
 				uses = dura,
 				choppy = mohs-1,
 				crumbly = mohs,
-				cracky = mohs-2,
+				cracky = mohs-3,
 			}),
 		on_ignite = "wc_crystals:" ..id.. "_crystal",
 		sounds = nodecore.sounds("nc_optics_glassy"),
@@ -132,7 +132,7 @@ local crystal = modname.. ".png^[colorize:" ..color
 				}
 			},
 			items = {
-				modname .. ":mace"
+				modname .. ":mace_" ..id
 			}
 		})
 -- ================================================================== --
